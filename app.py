@@ -58,6 +58,7 @@ def BaixarVideo(janela, valores):
     janela['views'].update(yt.views)
     janela['tamanho'].update(yt.length)
     janela['avaliacao'].update(yt.rating)
+    janela['status'].update('Baixando')
     ys = yt.streams.get_highest_resolution()
     print('Baixando')
     ys.download(tra_caminho)
@@ -76,7 +77,7 @@ def IniciarInterface():
         [sg.Text('Pasta de Saida ')],
         [sg.Input(key='caminho_arquivo'), sg.FolderBrowse(
             'Procurar Pasta', target='caminho_arquivo', key='caminho')],
-        [sg.Button('Baixar', key='baixar')],
+        [sg.Button('Baixar', key='baixar'), sg.Text('', key='status')],
         [sg.Text('Titulo do video')],
         [sg.Input(key='titulo')],
         [sg.Text('Numero de views ')],
@@ -87,7 +88,8 @@ def IniciarInterface():
         [sg.Input(key='avaliacao')]
     ]
 
-    janela = sg.Window('DownTube', layout)
+    janela = sg.Window(
+        'DownTube', layout, icon=r"G:\Dropbox\OHomemnãoparaNunca\DownTube\imagens\iconfinder_youtube.ico")
     threading_baixar_video = None
     while True:
         evento, valores = janela.read()
