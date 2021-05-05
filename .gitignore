@@ -1,2 +1,10 @@
 build/
 dist/
+*.spec
+*.iss
+*.txt
+ffmpeg.exe
+ffplay.exe
+ffprobe.exe
+mpetube.py
+.pyc
