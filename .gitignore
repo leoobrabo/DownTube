@@ -8,3 +8,4 @@ ffplay.exe
 ffprobe.exe
 mpetube.py
 .pyc
+__pycache__/

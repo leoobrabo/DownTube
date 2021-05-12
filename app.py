@@ -26,7 +26,7 @@ def IniciarInterface():
     sg.theme('Reddit')
 
     layout = [
-        [sg.Image(r'G:\Dropbox\OHomemnãoparaNunca\DownTube\imagens\youtube.png')],
+        [sg.Image('DownTube\Downtube_v2\imagens\youtube.png')],
         [sg.Text('Digite o Link ')],
         [sg.Input(key='link')],
         [sg.Text('Pasta de Saida ')],
@@ -44,7 +44,7 @@ def IniciarInterface():
     ]
 
     janela = sg.Window(
-        'DownTube', layout, icon=r"G:\Dropbox\OHomemnãoparaNunca\DownTube\imagens\iconfinder_youtube.ico")
+        'DownTube', layout, icon="DownTube\Downtube_v2\imagens\iconfinder_youtube.ico")
     threading_baixar_video = None
     while True:
         evento, valores = janela.read()
